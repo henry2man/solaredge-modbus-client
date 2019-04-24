@@ -49,8 +49,8 @@ export class SolarEdgeModbusClient {
             // [40089, 1, "I_AC_VA_SF", "int16", "Scale factor"],
             // [40090, 1, "I_AC_VAR", "int16", "VAR Reactive Power"],
             // [40091, 1, "I_AC_VAR_SF", "int16", "Scale factor"],
-            [40092, 1, "I_AC_PF", "int16", "% Power Factor4"],
-            [40093, 1, "I_AC_PF_SF", "int16", "Scale factor"],
+            // [40092, 1, "I_AC_PF", "int16", "% Power Factor4"],
+            // [40093, 1, "I_AC_PF_SF", "int16", "Scale factor"],
             [40094, 2, "I_AC_Energy_WH", "acc32", "WattHours AC Lifetime Energy production"],
             [40096, 1, "I_AC_Energy_WH_SF", "uint16", "Scale factor"],
             // [40097, 1, "I_DC_Current", "uint16", "Amps DC Current value"],
@@ -81,15 +81,15 @@ export class SolarEdgeModbusClient {
             // Real Power
             [40206, 1, "M_AC_Power", "int16", "Total Real Power (sum of active phases)"],
             [40210, 1, "M_AC_Power_SF", "int16", "AC Real Power Scale Factor"],
-            // Accumulated Energy
-            [40226, 2, "M_Exported", "uint32", "Total Exported Real Energy"],
-            [40228, 2, "M_Exported_A", "uint32", "Phase A Exported Real Energy"],
-            [40230, 2, "M_Exported_B", "uint32", "Phase B Exported Real Energy"],
-            [40232, 2, "M_Exported_C", "uint32", "Phase C Exported Real Energy"],
-            [40234, 2, "M_Imported", "uint32", "Total Imported Real Energy"],
-            [40236, 2, "M_Imported_A", "uint32", "Phase A Imported Real Energy"],
-            [40238, 2, "M_Imported_B", "uint32", "Phase B Imported Real Energy"],
-            [40240, 2, "M_Imported_C", "uint32", "Phase C Imported Real Energy"],
+            // Accumulated Energy --> BUGFIX changed to uint16 instead of uint32
+            [40226, 1, "M_Exported", "uint16", "Total Exported Real Energy"],
+            [40228, 1, "M_Exported_A", "uint16", "Phase A Exported Real Energy"],
+            [40230, 1, "M_Exported_B", "uint16", "Phase B Exported Real Energy"],
+            [40232, 1, "M_Exported_C", "uint16", "Phase C Exported Real Energy"],
+            [40234, 1, "M_Imported", "uint16", "Total Imported Real Energy"],
+            [40236, 1, "M_Imported_A", "uint16", "Phase A Imported Real Energy"],
+            [40238, 1, "M_Imported_B", "uint16", "Phase B Imported Real Energy"],
+            [40240, 1, "M_Imported_C", "uint16", "Phase C Imported Real Energy"],
             [40242, 1, "M_Energy_W_SF", "int16", "Real Energy Scale Factor"],
         ]
     
