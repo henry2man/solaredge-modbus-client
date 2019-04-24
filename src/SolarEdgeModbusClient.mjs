@@ -81,16 +81,10 @@ export class SolarEdgeModbusClient {
             // Real Power
             [40206, 1, "M_AC_Power", "int16", "Total Real Power (sum of active phases)"],
             [40210, 1, "M_AC_Power_SF", "int16", "AC Real Power Scale Factor"],
-            // Accumulated Energy --> BUGFIX changed to uint16 instead of uint32
-            [40226, 1, "M_Exported", "uint16", "Total Exported Real Energy"],
-            [40228, 1, "M_Exported_A", "uint16", "Phase A Exported Real Energy"],
-            [40230, 1, "M_Exported_B", "uint16", "Phase B Exported Real Energy"],
-            [40232, 1, "M_Exported_C", "uint16", "Phase C Exported Real Energy"],
-            [40234, 1, "M_Imported", "uint16", "Total Imported Real Energy"],
-            [40236, 1, "M_Imported_A", "uint16", "Phase A Imported Real Energy"],
-            [40238, 1, "M_Imported_B", "uint16", "Phase B Imported Real Energy"],
-            [40240, 1, "M_Imported_C", "uint16", "Phase C Imported Real Energy"],
-            [40242, 1, "M_Energy_W_SF", "int16", "Real Energy Scale Factor"],
+            // Accumulated Energy 
+            [40227, 2, "M_Exported_A", "uint32", "Phase A Exported Real Energy"],
+            [40235, 2, "M_Imported_A", "uint32", "Phase A Imported Real Energy"],
+            [40241, 1, "M_Energy_W_SF", "int16", "Real Energy Scale Factor"],
         ]
     
         this.socket = Net.connect(this.config)
