@@ -69,21 +69,25 @@ export class SolarEdgeModbusClient {
             // [40116, 2, "I_Event_2_Vendor", "uint32", "Not implemented"],
             // [40118, 2, "I_Event_3_Vendor", "uint32", "Not implemented"],
             // [40120, 2, "I_Event_4_Vendor", "uint32", "3x2 in the inverter manual(LCD display) is translated to 0x03000002 in the I_Event_4_Vendor register (Available from inverter CPU firmware version 3.19xx and above) 4*"], 
-            // [40121, 1, "C_SunSpec_DID", "uint16", "Value = 0x0001.Uniquely identifies this as a SunSpec Common Model Block"],
-            // [40122, 1, "C_SunSpec_Length", "uint16", "65 = Length of block in 16 - bit registers"],
-            // [40123, 16, "C_Manufacturer", "String(32)", "Value Registered with SunSpec = \"SolarEdge \""],
-            // [40139, 16, "C_Model", "String(32)", "SolarEdge Specific Value"],
-            // [40163, 8, "C_Version", "String(16)", "SolarEdge Specific Value"],
-            // [40171, 16, "C_SerialNumber", "String(32)", "SolarEdge Unique Value"],
-            // [40187, 1, "C_DeviceAddress", "uint16", "MODBUS Unit ID"],
-            // [40188, 1, "C_SunSpec_DID", "uint16", "Well-known value. Uniquely identifies this as a SunSpecMODBUS Map: Single Phase (AN or AB) Meter (201), Split Single Phase (ABN) Meter (202), Wye-Connect Three Phase (ABCN) Meter (203), Delta-Connect Three Phase (ABC) Meter(204)"],
-            // [40189, 1, "C_SunSpec_Length", "uint16", "Registers 50 = Length of model block"],
+
+            // BUGFIX --> Addresses +1--> https://forum.iobroker.net/topic/6403/solaredge-adapter-photovoltaikanlage/28
+
+            // [40122, 1, "C_SunSpec_DID", "uint16", "Value = 0x0001.Uniquely identifies this as a SunSpec Common Model Block"],
+            // [40123, 1, "C_SunSpec_Length", "uint16", "65 = Length of block in 16 - bit registers"],
+            // [40124, 16, "C_Manufacturer", "String(32)", "Value Registered with SunSpec = \"SolarEdge \""],
+            // [40140, 16, "C_Model", "String(32)", "SolarEdge Specific Value"],
+            // [40164, 8, "C_Version", "String(16)", "SolarEdge Specific Value"],
+            // [40172, 16, "C_SerialNumber", "String(32)", "SolarEdge Unique Value"],
+            // [40188, 1, "C_DeviceAddress", "uint16", "MODBUS Unit ID"],
+            // [40189, 1, "C_SunSpec_DID", "uint16", "Well-known value. Uniquely identifies this as a SunSpecMODBUS Map: Single Phase (AN or AB) Meter (201), Split Single Phase (ABN) Meter (202), Wye-Connect Three Phase (ABCN) Meter (203), Delta-Connect Three Phase (ABC) Meter(204)"],
+            // [40190, 1, "C_SunSpec_Length", "uint16", "Registers 50 = Length of model block"],
+            
             // Real Power
-            [40206, 1, "M_AC_Power", "int16", "Total Real Power (sum of active phases)"],
-            [40210, 1, "M_AC_Power_SF", "int16", "AC Real Power Scale Factor"],
+            [40207, 1, "M_AC_Power", "int16", "Total Real Power (sum of active phases)"],
+            [40211, 1, "M_AC_Power_SF", "int16", "AC Real Power Scale Factor"],
             // Accumulated Energy 
-            [40227, 2, "M_Exported_A", "uint32", "Phase A Exported Real Energy"],
-            [40235, 2, "M_Imported_A", "uint32", "Phase A Imported Real Energy"],
+            [40227, 2, "M_Exported", "uint32", "Phase A Exported Real Energy"],
+            [40235, 2, "M_Imported", "uint32", "Phase A Imported Real Energy"],
             [40241, 1, "M_Energy_W_SF", "int16", "Real Energy Scale Factor"],
         ]
     
