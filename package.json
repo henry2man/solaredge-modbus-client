@@ -1,21 +1,21 @@
 {
-  "name": "solaredge-modbus-client",
-  "version": "1.0.5",
-  "description": "A simple modbus client reader for solaredge inverters.",
+  "name": "solaredge-modbus-client2",
+  "version": "1.0.6",
+  "description": "A simple modbus client reader for solaredge inverters & meters",
   "main": "./main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/slattman/solaredge-modbus-client.git"
+    "url": "git+https://github.com/henry2man/solaredge-modbus-client2.git"
   },
-  "author": "Brad Slattman",
+  "author": "Enrique Jesús Cardona Cebrián <henry2man@gmail.com> (https://www.linkedin.com/in/enriquecardona/)",
   "license": "GPL-3.0-or-later",
   "bugs": {
-    "url": "https://github.com/slattman/solaredge-modbus-client/issues"
+    "url": "https://github.com/henry2man/solaredge-modbus-client2/issues"
   },
-  "homepage": "https://github.com/slattman/solaredge-modbus-client#readme",
+  "homepage": "https://github.com/henry2man/solaredge-modbus-client2#readme",
   "dependencies": {
     "esm": "^3.0.84",
     "modbus-tcp": "^0.4.13"
