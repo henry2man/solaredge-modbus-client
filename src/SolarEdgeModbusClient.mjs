@@ -103,22 +103,26 @@ export class SolarEdgeModbusClient2 {
 
     }
 
-    getData(registersToRead) {
+    getData(registersToBeReaded) {
 
         let promises = []
 
-        registersToRead
+        registersToBeReaded
             // Get registries
-            .map((toRead) => {
+            .map((oneRegisterToBeReaded) => {
 
-                var reg = this.registers.get(toRead);
+                var currentRegister = this.registers.get(oneRegisterToBeReaded);
 
                 let start = 0
                 let end = 0
-                let data = []
 
-                start = reg[0] - this.offset
-                end = (start + reg[1]) - 1
+                let id = currentRegister[0];
+                let size = currentRegister[1];
+                let dataType = currentRegister[2];
+                let description = currentRegister[3];
+
+                start = currentRegister[0] - this.offset
+                end = (start + currentRegister[1]) - 1
 
                 promises.push(new Promise((resolve, reject) => {
 
@@ -133,7 +137,7 @@ export class SolarEdgeModbusClient2 {
                             let value = null
                             let buffer = Buffer.concat(buffers)
 
-                            switch (reg[2]) {
+                            switch (dataType) {
                                 case "String(16)":
                                 case "String(32)":
                                     value = buffer.toString()
@@ -154,11 +158,11 @@ export class SolarEdgeModbusClient2 {
                             }
 
                             resolve({
-                                name: toRead,
-                                id: reg[0],
-                                size: reg[1],
-                                type: reg[2],
-                                description: reg[3],
+                                name: oneRegisterToBeReaded,
+                                id: id,
+                                size: size,
+                                type: dataType,
+                                description: description,
                                 buffers: buffers,
                                 value: value
                             })
