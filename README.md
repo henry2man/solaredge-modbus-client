@@ -15,19 +15,22 @@ let solar = new SolarEdgeModbusClient2({
     port: 502
 })
 
+// INV means "Inverter"
+// MET means "Meter", like 
 const RELEVANT_DATA = [
-        'C_Manufacturer',
-        'C_Model',
-        'C_Version',
-        'C_SerialNumber',
-        'I_AC_Current',
-        'I_AC_VoltageAB',
-        'I_AC_Power',
-        'I_AC_Energy_WH',
-        'I_DC_Current',
-        'I_DC_Voltage',
-        'I_DC_Power',
-        'I_Temp_Sink', 
+        'INV_I_AC_Power',
+        'INV_I_AC_Power_SF',
+        'INV_I_AC_Energy_WH',
+        'INV_I_AC_Energy_WH_SF',
+        'INV_I_Temp_Sink',
+        'INV_I_Temp_SF',
+        'INV_I_Status',
+        'INV_I_Status_Vendor',
+        'MET_M_AC_Power',
+        'MET_M_AC_Power_SF',
+        'MET_M_Exported',
+        'MET_M_Imported',
+        'MET_M_Energy_W_SF'
     ]
 
 
