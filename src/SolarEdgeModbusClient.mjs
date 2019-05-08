@@ -33,7 +33,7 @@ export class SolarEdgeModbusClient2 {
                 ["INV_C_SunSpec_Length", [40071, 1, "uint16", "Registers 50 = Length of model block"]],
                 ["INV_I_AC_Current", [40072, 1, "uint16", "Amps AC Total Current value"]],
                 ["INV_I_AC_CurrentA", [40073, 1, "uint16", "Amps AC Phase A Current value"]],
-                ["INV_IINV__AC_CurrentB", [40074, 1, "uint16", "Amps AC Phase B Current value"]],
+                ["INV_I_AC_CurrentB", [40074, 1, "uint16", "Amps AC Phase B Current value"]],
                 ["INV_I_AC_CurrentC", [40075, 1, "uint16", "Amps AC Phase C Current value"]],
                 ["INV_I_AC_Current_SF", [40076, 1, "int16", "AC Current scale factor"]],
                 ["INV_I_AC_VoltageAB", [40077, 1, "uint16", "Volts AC Voltage Phase AB value"]],
